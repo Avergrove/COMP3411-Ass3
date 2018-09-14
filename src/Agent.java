@@ -23,36 +23,48 @@ public class Agent {
 		int ch = 0;
 
 		System.out.print("Enter Action(s): ");
+		
+		try {
+	         while ( ch != -1 ) {
+	            // read character from keyboard
+	            ch  = System.in.read();
 
-		/*
-		 * try { while (ch != -1) { // read character from keyboard ch =
-		 * System.in.read();
-		 * 
-		 * switch (ch) { // if character is a valid action, return it case 'f':
-		 * context.moveForward(); return ((char) ch); case 'l': context.turnLeft();
-		 * return ((char) ch); case 'r': context.turnRight(); return ((char) ch); case
-		 * 'c': case 'u': return ((char) ch); } } } catch (IOException e) {
-		 * System.out.println("IO error:" + e); }
-		 * 
-		 */
+	            switch( ch ) { // if character is a valid action, return it
+	            case 'f':
+					context.moveForward();
+					return ((char) ch);
+					
+	            case 'l': 
+					context.turnLeft();
+					return ((char) ch);
+	            	
+	            case 'r': 
+					context.turnRight();
+					return ((char) ch);
+	            	
+	            case 'c': 
+	            	
+	            case 'u':
+	               return((char) ch );
+	            }
+	         }
+	      }
+	      catch (IOException e) {
+	         System.out.println ("IO error:" + e );
+	      }
 		
+		
+
 		// Implement AI
-		
-		return this.getNextMove();
-		
-		
-		// return 0;
+		// return this.getNextMove();
+
+		return 0;
 	}
-	
-	
+
 	protected char getNextMove() {
-		
-		
-		
+
 		return ' ';
 	}
-	
-	
 
 	void print_view(View view) {
 		System.out.println(view.toString());
